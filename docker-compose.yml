@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  
+  fastapi-demo-db:
+    image: postgres:12.5
+    environment:
+      POSTGRES_USER: fastapi_demo
+      POSTGRES_PASSWORD: fastapi_demo
+      POSTGRES_DB: fastapi_demo
+    ports:
+      - "5432:5432"
+
+    networks:
+      - fastapi-demo-network
+
+networks:
+  fastapi-demo-network:
+    driver: bridge

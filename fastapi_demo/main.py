@@ -31,7 +31,7 @@ def sync_get():
         client.get("https://httpbin.org/delay/2")
         client.get("https://httpbin.org/delay/3")
     elapsed_seconds = time.time() - start
-    return {"elapsed_time": f"{elapsed_seconds} seconds"}
+    return {"elapsed_time": f"{elapsed_seconds:.4f} seconds"}
 
 
 @app.get("/async")
@@ -44,4 +44,4 @@ async def async_get():
             client.get("https://httpbin.org/delay/3"),
         )
     elapsed_seconds = time.time() - start
-    return {"elapsed_time": f"{elapsed_seconds} seconds"}
+    return {"elapsed_time": f"{elapsed_seconds:.4f} seconds"}

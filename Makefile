@@ -19,3 +19,9 @@ lint:
 	@flake8 ./fastapi_demo --count --select=E9,F63,F7,F82 --show-source --statistics
 	@echo "Format problems:"
 	@flake8 ./fastapi_demo --count --max-complexity=10 --max-line-length=88 --statistic
+
+get-sync:
+	@ht http://localhost:8000/sync
+
+get-async:
+	@ht http://localhost:8000/async
